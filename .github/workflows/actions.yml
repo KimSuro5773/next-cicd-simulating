@@ -1,11 +1,13 @@
+# 이름
 name: Github Actions 연습하기
 
+# 언제 실행할지
 on:
   push:
     branches:
       - feature/*
-      - dev
 
+# 할 일
 jobs:
   test:
     runs-on: ubuntu-latest
