@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default async function Page() {
   const response = await fetch("https://fakestoreapi.com/products");
   const posts = await response.json();
+
   return (
     <div>
       <h1 className="mb-4 text-2xl font-bold">Posts</h1>
