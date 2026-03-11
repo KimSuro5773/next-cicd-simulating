@@ -1,9 +1,9 @@
 // src/app/[id]/page.tsx
 
-import Image from 'next/image';
+import Image from "next/image";
 
 export const generateStaticParams = async () => {
-  const response = await fetch('https://fakestoreapi.com/products');
+  const response = await fetch("https://fakestoreapi.com/products");
   const posts = await response.json();
   return posts.map((post: { id: number }) => ({
     id: post.id.toString(),
@@ -18,8 +18,8 @@ export default async function Page({
 }) {
   const { id } = await params;
   // 다른 API도 한 번에 사용하여 API 호출 수 늘어난다고 가정
-  await fetch('https://jsonplaceholder.typicode.com/todos/');
-  await fetch('https://restcountries.com/v3.1/all');
+  await fetch("https://jsonplaceholder.typicode.com/todos/");
+  await fetch("https://restcountries.com/v3.1/all");
   const response = await fetch(`https://fakestoreapi.com/products/${id}`);
   const post = await response.json();
   return (
