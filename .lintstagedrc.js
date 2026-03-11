@@ -1,12 +1,12 @@
-import { relative } from "path";
+import { relative } from 'path';
 
 const buildEslintCommand = (filenames) =>
   `eslint --fix ${filenames
     .map((f) => `"${relative(process.cwd(), f)}"`)
-    .join(" ")}`;
+    .join(' ')}`;
 
 const config = {
-  "*.{js,jsx,ts,tsx}": [buildEslintCommand],
+  '*.{js,jsx,ts,tsx}': [buildEslintCommand],
 };
 
 export default config;
