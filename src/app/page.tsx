@@ -1,10 +1,10 @@
 // src/app/page.tsx
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default async function Page() {
-  const response = await fetch('https://fakestoreapi.com/products');
+  const response = await fetch("https://fakestoreapi.com/products");
   const posts = await response.json();
 
   return (
